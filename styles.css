@@ -1,0 +1,147 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: url(images/domi2.avif) no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+nav .logo {
+    font-size: 2em;
+    font-weight: bold;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange; /* Typing cursor */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    background: linear-gradient(90deg, white, orange, skyblue);
+}
+
+.logo span {
+    opacity: 0;
+    display: inline-block;
+    animation: typing 2s steps(40, end) forwards, blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+.logo span:nth-child(1) { animation-delay: 0s; }
+.logo span:nth-child(2) { animation-delay: 0.1s; }
+.logo span:nth-child(3) { animation-delay: 0.2s; }
+/* Continue for each character, increasing the delay */
+.logo span:nth-child(24) { animation-delay: 2.3s; } /* Adjust this based on the number of characters */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.hero {
+    margin-top: 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #c0392b;
+}
+
+.services, .projects, .testimonials {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2, .projects h2, .testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.service-cards, .project-cards, .testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-card, .project-card, .testimonial-card {
+    background: #ecf0f1;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover, .project-card:hover, .testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card img, .project-card img, .testimonial-card img {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.service-card h3, .project-card h3, .testimonial-card h4 {
+    margin-top: 10px;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
