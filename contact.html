@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Domicile Fork Technologies. Contact us for any inquiries or support.">
+    <meta name="keywords" content="Domicile Fork Technologies, contact, technology solutions, support">
+    <meta property="og:title" content="Contact Us - Domicile Fork Technologies">
+    <meta property="og:description" content="Get in touch with Domicile Fork Technologies. Contact us for any inquiries or support.">
+    <meta property="og:image" content="path/to/social-media-image.jpg">
     <title>Contact Us - Domicile Fork Technologies</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav aria-label="Main Navigation">
             <div class="logo">Domicile Fork Technologies</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -24,22 +29,25 @@
     <section class="contact">
         <h1>Contact Us</h1>
         <div class="contact-info">
-            <p><strong>Address:</strong> 0050200 karen, Nairobi, kenya</p>
+            <p><strong>Address:</strong> 0050200 Karen, Nairobi, Kenya</p>
             <p><strong>Phone:</strong> +254 792092053</p>
             <p><strong>Email:</strong> misiochajackson647@gmail.com</p>
         </div>
         <div class="contact-form">
             <h2>Send Us a Message</h2>
-            <form action="#" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
+            <form action="process-contact.php" method="post">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </div>
         <div class="map">
-            <!-- Include a map showing the location of the company's office(s) -->
-            <!-- You can embed a Google Maps iframe or use another mapping service -->
+            <!-- Embed a Google Maps iframe or use another mapping service -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.9563125405065!2d-122.08424968469362!3d37.42206537982559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5e5d1efcb3f%3A0x6b95f6d2b3c011d3!2sGoogleplex!5e0!3m2!1sen!2sus!4v1514542554404" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 

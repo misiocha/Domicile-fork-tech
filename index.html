@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Domicile Fork Technologies: Your trusted partner in technology solutions. We offer mobile/web development, IT consulting, cybersecurity, network design, IT training, and CCTV installation.">
+    <meta name="keywords" content="Domicile Fork Technologies, technology solutions, IT consulting, cybersecurity">
+    <meta property="og:title" content="Domicile Fork Technologies">
+    <meta property="og:description" content="Your trusted partner in technology solutions.">
+    <meta property="og:image" content="images/og-image.jpg">
     <title>Domicile Fork Technologies</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Domicile Fork Technologies</div>
+        <nav aria-label="Main Navigation">
+            <div class="logo">
+                <span>D</span><span>o</span><span>m</span><span>i</span><span>c</span><span>i</span><span>l</span><span>e</span> <span>F</span><span>o</span><span>r</span><span>k</span> <span>T</span><span>e</span><span>c</span><span>h</span><span>n</span><span>o</span><span>l</span><span>o</span><span>g</span><span>i</span><span>e</span><span>s</span>
+            </div>
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="about.html">About</a></li>
@@ -29,18 +37,56 @@
         <h2>Our Services</h2>
         <div class="service-cards">
             <div class="service-card">
-                <h3>Web Development</h3>
-                <p>Creating cutting-edge websites tailored to your business needs.</p>
+                <img src="images/domi5.avif" alt="Mobile and Web Development Icon" loading="lazy">
+                <h3>Mobile/Web Development</h3>
+                <p>Creating cutting-edge websites and mobile applications tailored to your business needs.</p>
             </div>
             <div class="service-card">
-                <h3>IT Consulting</h3>
+                <img src="images/YY.avif" alt="IT Consulting Icon" loading="lazy">
+                <h3>IT Consulting / Support</h3>
                 <p>Providing expert advice to optimize your IT infrastructure.</p>
             </div>
             <div class="service-card">
+                <img src="images/vpnimg.avif" alt="Cybersecurity Icon" loading="lazy">
                 <h3>Cybersecurity</h3>
                 <p>Protecting your business with top-notch security solutions.</p>
             </div>
+            <div class="service-card">
+                <img src="images/NNIT.avif" alt="Network Design Icon" loading="lazy">
+                <h3>Network Design and Implementation</h3>
+                <p>Setting up and maintaining network infrastructure, including LAN/WAN, routers, switches, and wireless networks.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/ITTE.avif" alt="IT Training and Education Icon" loading="lazy">
+                <h3>IT Training and Education</h3>
+                <p>Providing training programs for employees to enhance their IT skills and knowledge.</p>
+            </div>
+            <div class="service-card">
+                <img src="images/CCTV.avif" alt="CCTV Installation Icon" loading="lazy">
+                <h3>CCTV Installation</h3>
+                <p>Design, Installation, and maintenance of surveillance camera systems for security purposes.</p>
+            </div>
         </div>
+    </section>
+
+    <section id="payment" class="payment">
+        <h2>Make a Payment</h2>
+        <form id="payment-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+            
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Amount" required>
+            
+            <button type="submit">Pay Now</button>
+        </form>
+        <div id="payment-status"></div>
     </section>
 
     <section id="projects" class="projects">
@@ -82,5 +128,32 @@
     <footer>
         <p>&copy; 2024 Domicile Fork Technologies. All rights reserved.</p>
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('#payment-form').on('submit', function(e) {
+                e.preventDefault();
+                var paymentData = {
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val(),
+                    amount: $('#amount').val()
+                };
+
+                $.ajax({
+                    url: '/make_payment',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(paymentData),
+                    success: function(response) {
+                        $('#payment-status').html('<p>Payment request sent. Please complete the payment on your phone.</p>');
+                    },
+                    error: function(error) {
+                        $('#payment-status').html('<p>Error: ' + error.responseText + '</p>');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
