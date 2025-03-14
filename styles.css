@@ -161,53 +161,125 @@ nav ul li a:focus, nav ul li a:hover {
     margin-top: 10px;
 }
 
+/* Add these new styles for the Blog and Careers pages */
+
+/* Blog Styles */
+.blog {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.blog-post {
+    background: var(--light-color);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+}
+
+.blog-post h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-post .meta {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Careers Styles */
+.careers {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.job-openings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.job {
+    background: var(--light-color);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.job:hover {
+    transform: translateY(-10px);
+}
+
+.job h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.job .location {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.apply-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.apply-button:hover {
+    background: var(--secondary-color);
+}
+
+.company-culture {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.company-culture h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
 footer {
     background: var(--dark-color);
     color: var(--light-color);
     text-align: center;
     padding: 20px 0;
-}
-.payment {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.payment h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.payment-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.payment-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1em;
-}
-
-.payment-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.payment-form button {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.payment-form button:hover {
-    background-color: var(--secondary-color);
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stay updated with the latest industry trends, tech updates, and case studies from Domicile Fork Technologies.">
+    <meta name="keywords" content="Domicile Fork Technologies, blog, tech updates, case studies, industry trends">
+    <meta property="og:title" content="Blog - Domicile Fork Technologies">
+    <meta property="og:description" content="Stay updated with the latest industry trends, tech updates, and case studies from Domicile Fork Technologies.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <title>Blog - Domicile Fork Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-posts { margin-top: 20px; }
+        .blog-post { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+        .form-container { margin-bottom: 20px; }
+        .form-container input, .form-container textarea { width: 100%; margin: 5px 0; padding: 10px; }
+        .form-container button { padding: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Main Navigation">
+            <div class="logo">Domicile Fork Technologies</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="testimonials">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <section class="blog">
+        <h1>Blog & Insights</h1>
+        
+        <div class="form-container">
+            <h2>Add New Article</h2>
+            <input type="text" id="title" placeholder="Article Title" required>
+            <input type="text" id="date" placeholder="Published Date" required>
+            <textarea id="content" placeholder="Write your article here..." required></textarea>
+            <button id="submit">Add Article</button>
+        </div>
+
+        <div class="blog-posts" id="blog-posts">
+            <article class="blog-post">
+                <h2>Top 5 Tech Trends in 2024</h2>
+                <p class="meta">Published on January 15, 2024</p>
+                <p>Discover the latest trends shaping the technology landscape in 2024, from AI advancements to cybersecurity innovations.</p>
+                <a href="blog-post-1.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <h2>Case Study: Transforming E-Commerce with AI</h2>
+                <p class="meta">Published on December 20, 2023</p>
+                <p>Learn how we helped a client revolutionize their e-commerce platform using cutting-edge AI solutions.</p>
+                <a href="blog-post-2.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <h2>Cybersecurity Best Practices for SMEs</h2>
+                <p class="meta">Published on November 10, 2023</p>
+                <p>Protect your business with these essential cybersecurity tips tailored for small and medium enterprises.</p>
+                <a href="blog-post-3.html" class="read-more">Read More</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Domicile Fork Technologies. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            const title = document.getElementById('title').value;
+            const date = document.getElementById('date').value;
+            const content = document.getElementById('content').value;
+
+            if (title && date && content) {
+                const blogPosts = document.getElementById('blog-posts');
+
+                const newPost = document.createElement('article');
+                newPost.className = 'blog-post';
+                newPost.innerHTML = `
+                    <h2>${title}</h2>
+                    <p class="meta">Published on ${date}</p>
+                    <p>${content}</p>
+                    <a href="#" class="read-more">Read More</a>
+                `;
+
+                blogPosts.prepend(newPost);
+
+                // Clear the form
+                document.getElementById('title').value = '';
+                document.getElementById('date').value = '';
+                document.getElementById('content').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>
